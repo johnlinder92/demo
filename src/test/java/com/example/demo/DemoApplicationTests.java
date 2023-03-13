@@ -39,11 +39,12 @@ class DemoApplicationTests {
 		RequestSpecification httpRequest = RestAssured.given();
 		// specify the method type (GET) and the parameters if any.
 		//In this case the request does not take any parameters
-		httpRequest.param("name", "Kavya");
-		Response response = httpRequest.get("/greeting");
+		httpRequest.param("name", "Kavya- post request test2");
+		Response response = httpRequest.post("/greeting/5");
 
 		// Print the status and message body of the response received from the server
 		System.out.println("Status received => " + response.getStatusLine());
+		System.out.println(response);
 
 
 	}

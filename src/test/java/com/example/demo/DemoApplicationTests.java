@@ -39,8 +39,8 @@ class DemoApplicationTests {
 		RequestSpecification httpRequest = RestAssured.given();
 		// specify the method type (GET) and the parameters if any.
 		//In this case the request does not take any parameters
-		httpRequest.param("name", "Kavya- post request test2");
-		Response response = httpRequest.post("/greeting/5");
+		httpRequest.param("name", "lakdfjsöldkfösdlkföljkfsdöl");
+		Response response = httpRequest.post("/data/5000");
 
 		// Print the status and message body of the response received from the server
 		System.out.println("Status received => " + response.getStatusLine());
@@ -48,6 +48,22 @@ class DemoApplicationTests {
 
 
 	}
+
+	@Test
+	void getdata() throws JSONException {
+		RestAssured.baseURI = baseurl;
+		// Get the RequestSpecification of the request to be sent to the server.
+		RequestSpecification httpRequest = RestAssured.given();
+		// specify the method type (GET) and the parameters if any.
+		Response response = httpRequest.get("/data");
+
+		// Print the status and message body of the response received from the server
+		System.out.println("Status received => " + response.getStatusLine());
+		System.out.println(response.prettyPrint());
+
+
+	}
+
 
 
 }

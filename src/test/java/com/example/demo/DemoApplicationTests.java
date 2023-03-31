@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
 @SpringBootTest
 class DemoApplicationTests {
 
-	String baseurl= "http://localhost:8080";
+	String baseurl= "http://localhost:8081";
 
 
 
@@ -39,7 +39,7 @@ class DemoApplicationTests {
 		RequestSpecification httpRequest = RestAssured.given();
 		// specify the method type (GET) and the parameters if any.
 		//In this case the request does not take any parameters
-		httpRequest.param("name", "lakdfjsöldkfösdlkföljkfsdöl");
+		httpRequest.param("name", "lakdfjsöldkfösdlkföljkfsdölBORNA");
 		Response response = httpRequest.post("/data/5000");
 
 		// Print the status and message body of the response received from the server

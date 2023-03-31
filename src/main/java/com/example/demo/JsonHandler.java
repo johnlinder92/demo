@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
@@ -34,16 +33,18 @@ public class JsonHandler {
         return map.get(id);
     }
 
-    public ResponseEntity<HashMap<Long, String>> getWholeJson() throws FileNotFoundException {
+    public  HashMap<Long, String> getWholeJson() throws FileNotFoundException {
         Gson gson = new GsonBuilder()
                 .enableComplexMapKeySerialization()
                 .setPrettyPrinting()
                 .create();
-        String filePath = "build/data.json";
+
+       java.lang.String filePath = "build/data.json";
         File file = new File(filePath);
-        ResponseEntity<HashMap<Long, String>> mappen = null;
-        ResponseEntity<HashMap<Long, String>> map= null;
-        Type mapType = new TypeToken<ResponseEntity<HashMap<Long, String>>>() {
+
+        HashMap<Long, String> mappen = null;
+        HashMap<Long, String> map= null;
+        Type mapType = new TypeToken<HashMap<Long, String>>() {
         }.getType();
         if (file.exists()) {
             JsonReader reader = new JsonReader(new FileReader(file));

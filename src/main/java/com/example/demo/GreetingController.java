@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,14 +30,7 @@ public class GreetingController {
 
 		return "created element with ID: "+ id + " and value: " + name;
 	}
-	@GetMapping("/data")
-	public ResponseEntity<HashMap<Long, String >> GetAllData() throws IOException {
 
-		ResponseEntity<HashMap<Long, String>> test = jsonHandler.getWholeJson();
-
-
-		return test;
-	}
 
 
 
